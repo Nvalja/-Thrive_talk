@@ -15,9 +15,10 @@
   &__item {
     display: flex;
     flex-direction: column;
+    position: relative;
     height: 480px;
     padding: 0 70px;
-    transition: transform 0.4s, border-radius 0.4s,;
+    transition: transform 0.4s, border-radius 0.4s;
    
     &:hover {
       transform: scale(0.9);
