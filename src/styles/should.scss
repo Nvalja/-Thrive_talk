@@ -1,11 +1,10 @@
 .should {
-  position: relative;
   display: flex;
   justify-content: space-between;
   background-color: $c-page;
 
   @include onTablet {
-    justify-content: end;
+    flex-direction: column;
   }
   @include onMobile {
     justify-content: center;
@@ -17,16 +16,14 @@
     background-size: cover;
     height: 800px;
     width: 480px;
+
     &:hover {
       box-shadow: inset 1px 1px 3px $activeShadow;
     }
 
-    
-
     @include onTablet {
-      position: absolute;
-      top: 0;
-      left: 0;
+      width: 100%;
+      background-position: center;
     }
     @include onMobile {
       width: 100%;
@@ -42,23 +39,24 @@
     
 
     @include onTablet {
-      z-index: 1;
       height: 800px;
+      padding-left: calc(30vw - 180px);
     }
 
     @include onMobile {
       text-align: center;
+      padding: 50px 20px;
     }
   }
 
   &__title {
+    padding-left: 10px;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: $c-textDark;
     background-color: $c-page;
-    @include shadowBox;
   }
 
   &__text {
@@ -70,16 +68,14 @@
     color: $c-textDark;
     transition: background-color 0.5s;
     background-color: $c-whiteOpacity;
-    
-    &:hover {
-      background-color: $c-page;
-    }
 
     @include onMobile {
-      padding: 20px;
+      br {
+        display: none;
+      }
       font-size: 29px;
       line-height: 1.5;
-      border-radius: 20px;
+      text-align: start;
     }
   }
 
@@ -90,7 +86,7 @@
   &__link {
     display: inline-block;
     width: 160px;
-    padding: 0 10px;
+    padding: 10px;
     font-size: 16px;
     font-weight: bold;
     line-height: 23px;
@@ -101,7 +97,7 @@
     transition: background-color 0.5s, transform 0.3s;
 
     @include onMobile {
-      width: 100%;
+      margin: 0 auto;
     }
     
     &:hover {
